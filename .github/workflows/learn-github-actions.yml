@@ -6,6 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: install web app deps
+        working-directory: src/webapp
+        run: npm install
+      - name: start local server
+        working-directory: src/webapp
+        run: npm run start-server
       - name: install unit test deps
         working-directory: src/webapp/api
         run: npm install
