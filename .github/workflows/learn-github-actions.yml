@@ -9,9 +9,6 @@ jobs:
       - name: install web app deps
         working-directory: src/webapp
         run: npm install
-      - name: start local server
-        working-directory: src/webapp
-        run: npm run start-server
       - name: install unit test deps
         working-directory: src/webapp/api
         run: npm install
@@ -21,6 +18,9 @@ jobs:
       - name: install e2e test deps
         working-directory: e2e/
         run: npm install
+      - name: start local server for e2e tests
+        working-directory: src/webapp
+        run: npm run start-server &
       - name: run e2e tests
         working-directory: e2e/
         run: npm run test
