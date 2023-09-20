@@ -8,11 +8,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
+      - run: ls
       - name: install unit test deps
-        working-directory: ./src/webapp/api
+        working-directory: src/webapp/api
         run: npm install
       - name: run unit tests
-        working-directory: ./src/webapp/api
+        working-directory: src/webapp/api
         run: npm run test
         
   
