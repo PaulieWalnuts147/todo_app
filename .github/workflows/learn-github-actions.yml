@@ -12,5 +12,11 @@ jobs:
       - name: run unit tests
         working-directory: src/webapp/api
         run: npm run test
+      - name: install e2e test deps
+        working-directory: e2e/
+        run: npm install
+      - name: run e2e tests
+        working-directory: e2e/
+        run: npm run test
         
   
